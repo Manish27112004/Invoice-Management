@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("{{ url_for('static', filename='images/homebkgr.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #090606;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .myDiv {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAKEC STORES</h1>
+    <div class="container">
+        <div class="myDiv">
+            <button onclick="redirectToLink()" class="button">Create Invoice</button>
+            <br><br>
+            <button onclick="redirectToLink1()" class="button">View Invoice</button>
+            <br><br>
+            <button onclick="redirectToLink2()" class="button">Generate Report</button>
+        </div>
+    </div>
+    <script>
+        function redirectToLink() {
+            window.location.href = "{{ url_for('create_invoice') }}";
+        }
+        function redirectToLink1() {
+            window.location.href =  "{{ url_for('view_invoices') }}";
+        }
+        function redirectToLink2() {
+            window.location.href =  "{{ url_for('generate_report') }}";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">SAKEC Store</h2>
+    <br></br>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item['item_name'] }}</td>
+            <td>{{ item['quantity'] }}</td>
+            <td>{{ item['amount'] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th colspan="2">Total:</th>
+            <td>{{ invoice['total_amount'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>
